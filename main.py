@@ -52,5 +52,8 @@ while isGameOn:
     if ball.xcor() < -380:
         scoreBoard.incrementP2Score()
         ball.resetPos()
+    if scoreBoard.isGameOver():
+        scoreBoard.printGameOver()
+        isGameOn = False
 
 screen.exitonclick()

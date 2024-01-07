@@ -23,4 +23,4 @@ class Ball(Turtle):
     def resetPos(self):
         self.goto(0, 0)
         self.bounceX()
-        self.currentSpeed = 0.15
+        self.currentSpeed = 0.1

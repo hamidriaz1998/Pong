@@ -27,3 +27,14 @@ class ScoreBoard(Turtle):
     def incrementP2Score(self):
         self.p2Score += 1
         self.printScores()
+
+    def isGameOver(self):
+        return self.p1Score == 5 or self.p2Score == 5
+
+    def printGameOver(self):
+        self.reset()
+        self.color("white")
+        self.penup()
+        self.hideturtle()
+        self.goto(0, 0)
+        self.write("Game Over", align="center", font=FONT)
