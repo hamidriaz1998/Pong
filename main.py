@@ -2,6 +2,7 @@ from time import sleep
 from turtle import Screen
 from paddle import Paddle
 from ball import Ball
+from scoreBoard import ScoreBoard
 
 # Setup Screen
 screen = Screen()
@@ -14,6 +15,7 @@ screen.title("Pong")
 player1 = Paddle((-350, 0))
 player2 = Paddle((350, 0))
 ball = Ball()
+scoreBoard = ScoreBoard()
 
 # Listen for keystrokes
 screen.listen()
@@ -36,17 +38,18 @@ while isGameOn:
         ball.bounceY()
 
     # Detect collsion with paddle
-    if (
-        ball.xcor() > 330
-        or ball.distance(player2) < 40
-        or ball.xcor() < -330
-        or ball.distance(player1) < 40
+    if (ball.xcor() > 330 and ball.distance(player2) < 40) or (
+        ball.xcor() < -330 and ball.distance(player1) < 40
     ):
         ball.bounceX()
 
     # player misses
-    if ball.xcor() > 380 or ball.xcor() < -380:
+    if ball.xcor() > 380:
+        scoreBoard.incrementP1Score()
         ball.resetPos()
 
+    if ball.xcor() < -380:
+        scoreBoard.incrementP2Score()
+        ball.resetPos()
 
 screen.exitonclick()

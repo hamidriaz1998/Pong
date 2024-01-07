@@ -21,3 +21,4 @@ class Ball(Turtle):
 
     def resetPos(self):
         self.goto(0, 0)
+        self.bounceX()
