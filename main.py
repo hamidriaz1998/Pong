@@ -1,6 +1,7 @@
 from time import sleep
 from turtle import Screen
 from paddle import Paddle
+from ball import Ball
 
 # Setup Screen
 screen = Screen()
@@ -12,6 +13,7 @@ screen.title("Pong")
 # Create instances
 player1 = Paddle((-350, 0))
 player2 = Paddle((350, 0))
+ball = Ball()
 
 # Listen for keystrokes
 screen.listen()
@@ -27,6 +29,7 @@ isGameOn = True
 while isGameOn:
     screen.update()
     sleep(0.1)
+    ball.move()
 
 
 screen.exitonclick()
