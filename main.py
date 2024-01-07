@@ -44,5 +44,9 @@ while isGameOn:
     ):
         ball.bounceX()
 
+    # player misses
+    if ball.xcor() > 380 or ball.xcor() < -380:
+        ball.resetPos()
+
 
 screen.exitonclick()
