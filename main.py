@@ -30,7 +30,7 @@ screen.onkey(player2.down, "Down")
 isGameOn = True
 while isGameOn:
     screen.update()
-    sleep(0.1)
+    sleep(ball.currentSpeed)
     ball.move()
 
     # Detect wall collsions for ball
@@ -42,6 +42,7 @@ while isGameOn:
         ball.xcor() < -330 and ball.distance(player1) < 40
     ):
         ball.bounceX()
+        ball.currentSpeed *= 0.9
 
     # player misses
     if ball.xcor() > 380:
