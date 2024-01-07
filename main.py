@@ -15,11 +15,11 @@ player2 = Paddle("left")
 # Listen for keystrokes
 screen.listen()
 # Control for player 1
-screen.onkey("Up")
-screen.onkey("Down")
+screen.onkey(player1.up, "Up")
+screen.onkey(player1.down, "Down")
 # Control for player 2
-screen.onkey("W")
-screen.onkey("S")
+screen.onkey(player2.up, "W")
+screen.onkey(player2.down, "S")
 
 
 screen.exitonclick()
