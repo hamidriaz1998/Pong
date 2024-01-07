@@ -13,7 +13,9 @@ class Paddle(Turtle):
     # Movement Control
 
     def up(self):
-        self.goto(self.xcor(), self.ycor() + 20)
+        if self.ycor() < 240:
+            self.goto(self.xcor(), self.ycor() + 20)
 
     def down(self):
-        self.goto(self.xcor(), self.ycor() - 20)
+        if self.ycor() > -240:
+            self.goto(self.xcor(), self.ycor() - 20)
