@@ -10,17 +10,17 @@ screen.tracer(0)
 screen.title("Pong")
 
 # Create instances
-player1 = Paddle("right")
-player2 = Paddle("left")
+player1 = Paddle((-350, 0))
+player2 = Paddle((350, 0))
 
 # Listen for keystrokes
 screen.listen()
 # Control for player 1
-screen.onkey(player1.up, "Up")
-screen.onkey(player1.down, "Down")
+screen.onkey(player1.up, "w")
+screen.onkey(player1.down, "s")
 # Control for player 2
-screen.onkey(player2.up, "w")
-screen.onkey(player2.down, "s")
+screen.onkey(player2.up, "Up")
+screen.onkey(player2.down, "Down")
 
 # Game loop
 isGameOn = True
